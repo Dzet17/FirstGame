@@ -4,6 +4,7 @@ import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
+import java.util.Random;
 
 public class Game extends Canvas implements Runnable
 {
@@ -14,6 +15,7 @@ public class Game extends Canvas implements Runnable
 	private Thread thread;
 	private boolean running = false;
 	
+	private Random r;
 	private Handler handler;
 	
 	public Game()
@@ -21,7 +23,12 @@ public class Game extends Canvas implements Runnable
 		new Window(WIDTH, HEIGHT, "My First Game", this);
 		
 		handler = new Handler();
-		handler.addObject(new Player(100, 100, ID.Player));
+		r = new Random();
+		
+		for(int i = 0; i < 50; i++) {
+			handler.addObject(new Player(r.nextInt(WIDTH), r.nextInt(HEIGHT), ID.Player));
+		}
+
 	}
 	
 	

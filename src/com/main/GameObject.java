@@ -25,7 +25,7 @@ public abstract class GameObject
 	public int getX(int x) {
 		return x;
 	}
-	public int getY(int y) {
+	public int getY() {
 		return y;
 	}
 	public void setId(ID id) {
@@ -42,5 +42,8 @@ public abstract class GameObject
 	}
 	public int getVolY() {
 		return volY;
+	}
+	public ID getId(){
+		return id;
 	}
 }

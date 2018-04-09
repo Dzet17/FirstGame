@@ -20,17 +20,27 @@ public class KeyInput extends KeyAdapter{
 		if(tempObject.getId() == ID.Player) {
 			//key events for player 1
 			
-			if(key == KeyEvent.VK_W) tempObject.setY(tempObject.getY() - 1);
-		}
-		if(tempObject.getId() == ID.Player2) {
-			//Key events for player 2
-			
-			if(key == KeyEvent.VK_UP) tempObject.setY(tempObject.getY() - 1);
+			if(key == KeyEvent.VK_W) tempObject.setVolY(-5);
+			if(key == KeyEvent.VK_S) tempObject.setVolY(5);
+			if(key == KeyEvent.VK_D) tempObject.setVolX(5);
+			if(key == KeyEvent.VK_A) tempObject.setVolX(-5);
 		}
 	}
 }
 
 public void keyReleased(KeyEvent e) {
 	int key = e.getKeyCode();
-}
+	for(int i = 0; i < handler.object.size(); i++) {
+		GameObject tempObject = handler.object.get(i);
+		
+		if(tempObject.getId() == ID.Player) {
+			//key events for player 1
+			
+			if(key == KeyEvent.VK_W) tempObject.setVolY(0);
+			if(key == KeyEvent.VK_S) tempObject.setVolY(0);
+			if(key == KeyEvent.VK_D) tempObject.setVolX(0);
+			if(key == KeyEvent.VK_A) tempObject.setVolX(0);
+		}
+	}
+	}
 }

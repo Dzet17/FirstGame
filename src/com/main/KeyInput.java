@@ -42,5 +42,8 @@ public void keyReleased(KeyEvent e) {
 			if(key == KeyEvent.VK_A) tempObject.setVolX(0);
 		}
 	}
+	
+	if(key == KeyEvent.VK_ESCAPE) System.exit(1);
+	
 	}
 }

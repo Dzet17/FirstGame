@@ -18,6 +18,9 @@ public class Player extends GameObject
 	{
 	x += volX;
 	y += volY;
+	
+	x = Game.clamp(x, 0, Game.WIDTH - 38);
+	y = Game.clamp(y, 0, Game.HEIGHT - 55);
 	}
 
 	public void render(Graphics g)
@@ -25,4 +28,7 @@ public class Player extends GameObject
 	if(id == ID.Player) g.setColor(Color.white);
 	g.fillRect(x, y, 32, 32);
 	}
+	
+	
+	
 }

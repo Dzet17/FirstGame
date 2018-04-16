@@ -14,11 +14,11 @@ public class HUD{
 		HEALTH = Game.clamp(HEALTH, 0, 100);
 	}
 	public void render(Graphics g) {
-		g.setColor(Color.gray);
+		g.setColor(Color.red);
 		g.fillRect(15, 15, 200, 32);
-		g.setColor(Color.green);
-		g.fillRect(15, 15, HEALTH * 2, 32);
 		g.setColor(Color.white);
+		g.fillRect(15, 15, HEALTH * 2, 32);
+		g.setColor(Color.green);
 		g.fillRect(15, 15, HEALTH * 2, 32);
 	}
 	

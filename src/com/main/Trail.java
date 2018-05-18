@@ -1,5 +1,6 @@
 package com.main;
 
+import java.awt.AlphaComposite;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
@@ -22,6 +23,12 @@ public void render()
 public void render(Graphics g)
 {
 	
+}
+
+private AlphaComposite makeTransparent(float alpha) 
+{
+	int type = AlphaComposite.SRC_OVER;
+	return(AlphaComposite.getInstance(type, alpha));
 }
 @Override
 public Rectangle getBounds()

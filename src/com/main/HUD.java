@@ -7,9 +7,12 @@ public class HUD{
 	
 	public static int HEALTH = 100;
 	
+	private int greenValue = 255;
+	
 	public void tick()
 	{	
 		HEALTH = Game.clamp(HEALTH, 0, 100);
+		
 	}
 	public void render(Graphics g) {
 		g.setColor(Color.red);
